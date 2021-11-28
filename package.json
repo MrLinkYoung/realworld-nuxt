@@ -1,0 +1,8 @@
+{
+  "name": "realworld-nuxt",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/MrLinkYoung/realworld-nuxt.git",
+  "author": "junsong <junxiong@zhaoxitech.com>",
+  "license": "MIT"
+}
