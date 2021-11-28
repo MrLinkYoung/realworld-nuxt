@@ -1,8 +1,8 @@
 <template>
   <div>
-    <form class="card comment-form">
+    <form class="card comment-form" @submit.prevent="onSubmit">
       <div class="card-block">
-        <textarea class="form-control" placeholder="Write a comment..." rows="3"></textarea>
+        <textarea class="form-control" placeholder="Write a comment..." rows="3" v-model="commentData"></textarea>
       </div>
       <div class="card-footer">
         <img src="http://i.imgur.com/Qr71crq.jpg" class="comment-author-img" />
@@ -45,7 +45,7 @@
 </template>
 
 <script>
-import { getComments } from '@/api/article'
+import { getComments, addComments } from '@/api/article'
 
 export default {
   name: 'ArticleComments',
@@ -57,13 +57,25 @@ export default {
   },
   data () {
     return {
-      comments: [] // 文章列表
+      comments: [], // 文章列表
+      commentData: null
     }
   },
   async mounted () {
     const { data } = await getComments(this.article.slug)
     this.comments = data.comments
-  }
+  },
+  methods: {
+    async onSubmit(){
+      if(this.commentData){
+        const { data } = await addComments({comment:{body: this.commentData}},this.article.slug)
+        this.$nextTick(()=>{
+          this.comments.splice(0,0,data.comment)
+        })
+        this.commentData = null
+      }
+    },
+  },
 }
 </script>
 
