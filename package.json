@@ -1,8 +1,21 @@
 {
   "name": "realworld-nuxt",
   "version": "1.0.0",
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start"
+  },
   "main": "index.js",
   "repository": "https://github.com/MrLinkYoung/realworld-nuxt.git",
-  "author": "junsong <junxiong@zhaoxitech.com>",
-  "license": "MIT"
+  "author": "junsong",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "cookieparser": "^0.1.0",
+    "dayjs": "^1.8.28",
+    "js-cookie": "^2.2.1",
+    "markdown-it": "^11.0.0",
+    "nuxt": "^2.12.2"
+  }
 }
