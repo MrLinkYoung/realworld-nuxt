@@ -4,7 +4,7 @@
     <div class="banner">
       <div class="container">
         <h1 class="logo-font">拉勾教育</h1>
-        <p>A place to share your knowledge.</p>
+        <p>Nuxt 自动发布部署测试.</p>
       </div>
     </div>
 
